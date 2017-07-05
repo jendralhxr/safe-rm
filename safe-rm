@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -f
+argc=0
+argv2="rm1 "
+for argv in "$@"
+do
+	argc=$(( argc+1 ))
+	if [ "$argv" == "*" ]
+		then
+		echo "found stray asterisk (*), proceed with rm? (y/n)"
+		read prompt
+		if [ "$prompt" == "y" ]
+			then echo "YOLO!"
+		fi
+	else argv2="$argv2 $argv"
+	fi 
+done
+if [ "$prompt" == "y" ]
+then rm1 *
+else
+$argv2
+fi
