@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -f
+unset f
 argc=0
 argv2="rm1 "
 for argv in "$@"
@@ -16,6 +16,7 @@ do
 	else argv2="$argv2 $argv"
 	fi 
 done
+set f
 if [ "$prompt" == "y" ]
 then rm1 *
 else
