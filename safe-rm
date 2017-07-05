@@ -2,7 +2,7 @@
 
 unset f
 argc=0
-argv2="rm1 "
+argv2="rm1 -vfr"
 for argv in "$@"
 do
 	argc=$(( argc+1 ))
